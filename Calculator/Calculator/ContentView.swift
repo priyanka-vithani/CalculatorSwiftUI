@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    var currentValue = "1"
+    @State var currentValue: String = "0"
     var body: some View {
         ZStack{
             Color.black.ignoresSafeArea()
             VStack{
                 Textview(value: currentValue)
-                ButtonGrid()
+                ButtonGrid(currentValue: $currentValue)
             }
             
         }
@@ -24,3 +24,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
